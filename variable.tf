@@ -24,7 +24,6 @@ variable "ecs_service_name" {
   default     = "fargate-service"
 }
 
-
 variable "db_name" {
   description = "Name of the initial MySQL database"
   type        = string
@@ -38,6 +37,7 @@ variable "db_username" {
 variable "db_password" {
   description = "Master DB password"
   type        = string
+  sensitive   = true
 }
 
 variable "db_instance_class" {

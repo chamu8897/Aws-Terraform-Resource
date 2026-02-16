@@ -3,12 +3,13 @@ vpc_cidr            = "10.0.0.0/16"
 public_subnet_cidr  = "10.0.1.0/24"
 private_subnet_cidr = "10.0.2.0/24"
 ecs_service_name  = "fargate-service"
+
 db_name              = "school_db"
 db_username          = "school_admin"
 db_password          = "SuperSecurePass123!"
 db_instance_class    = "db.t3.micro"
 db_allocated_storage = 20
-db_engine_version    = "8.0.34"
+db_engine_version    = "8.0.45"
 
 # Replace with your actual security group IDs
 vpc_security_group_ids = [
