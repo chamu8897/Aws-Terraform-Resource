@@ -178,3 +178,34 @@ resource "aws_ecs_service" "fargate_service" {
     assign_public_ip = true
   }
 }
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_db_subnet_group" "mysql_subnet_group" {
+  name       = "mysql-subnet-group"
+  subnet_ids = var.subnet_ids
+
+  tags = {
+    Name = "mysql-subnet-group"
+  }
+}
+
+resource "aws_db_instance" "mysql" {
+  identifier              = "mysql-instance"
+  allocated_storage       = var.db_allocated_storage
+  engine                  = "mysql"
+  engine_version          = var.db_engine_version
+  instance_class          = var.db_instance_class
+  db_name                 = var.db_name
+  username                = var.db_username
+  password                = var.db_password
+  vpc_security_group_ids  = var.vpc_security_group_ids
+  db_subnet_group_name    = aws_db_subnet_group.mysql_subnet_group.name
+  skip_final_snapshot     = true
+
+  tags = {
+    Name = "mysql-db"
+  }
+}
