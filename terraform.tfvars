@@ -21,3 +21,16 @@ subnet_ids = [
   "subnet-073fe413e2f3d27ff",
   "subnet-05dae7c5a61092684"
 ]
+
+instance_name       = "demo-ec2"
+instance_type       = "t3.micro"
+
+ami_id              = "ami-080ecf65f4d838a6e"
+
+key_name            = "chamu"
+
+subnet_id           = "subnet-05dae7c5a61092684"
+
+security_group_ids  = [
+  "sg-0a9268987d307a423"
+]
