@@ -213,6 +213,11 @@ resource "aws_instance" "ec2" {
   vpc_security_group_ids = var.security_group_ids
   key_name               = var.key_name
 
+   root_block_device {
+    volume_size = var.root_volume_size
+    volume_type = var.root_volume_type
+    delete_on_termination = true
+  }
   tags = {
     Name = var.instance_name
   }
