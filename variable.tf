@@ -17,3 +17,9 @@ variable "private_subnet_cidr" {
   description = "CIDR block for the private subnet"
   type        = string
 }
+
+variable "ecs_service_name" {
+  description = "Name of the ECS service"
+  type        = string
+  default     = "fargate-service"
+}

@@ -17,3 +17,16 @@ output "internet_gateway_id" {
 output "nat_gateway_id" {
   value = aws_nat_gateway.natgw.id
 }
+
+
+output "ecs_cluster_id" {
+  value = aws_ecs_cluster.fargate_cluster.id
+}
+
+output "ecs_service_name" {
+  value = aws_ecs_service.fargate_service.name
+}
+
+output "ecs_security_group_id" {
+  value = aws_security_group.ecs_sg.id
+}
