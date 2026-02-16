@@ -2,6 +2,7 @@ aws_region          = "eu-west-1"
 vpc_cidr            = "10.0.0.0/16"
 public_subnet_cidr  = "10.0.1.0/24"
 private_subnet_cidr = "10.0.2.0/24"
+
 ecs_service_name  = "fargate-service"
 
 db_name              = "school_db"
@@ -35,5 +36,5 @@ security_group_ids  = [
   "sg-0a9268987d307a423"
 ]
 
-root_volume_size    = 30
+root_volume_size    = 50
 root_volume_type    = "gp3"
